@@ -8,7 +8,7 @@
 
 #import "SSAppDelegate.h"
 #import "SSMainViewController.h"
-//#import "SMClient.h"
+#import "SSStackMobRESTApi.h"
 #import "SSFurnitureTableController.h"
 
 @implementation SSAppDelegate
@@ -16,13 +16,13 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-//@synthesize coreDataStore = _coreDataStore;
-//@synthesize client = _client;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    self.client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"d5e60ef8-af6e-4c52-b869-9c80c92a61b3"];
 
+    self.stackMobRESTApi = [[SSStackMobRESTApi alloc] init];
+    [self.stackMobRESTApi setupObjectManager];
+    [self.stackMobRESTApi setupMappings];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
