@@ -1,674 +1,1580 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		01538C89183407BD00EBB424 /* SSFurnitureDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01538C87183407BD00EBB424 /* SSFurnitureDetailController.m */; };
-		01538C8A183407BD00EBB424 /* SSFurnitureDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01538C88183407BD00EBB424 /* SSFurnitureDetailController.xib */; };
-		01538CC71834311600EBB424 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01538CC61834311600EBB424 /* MobileCoreServices.framework */; };
-		018B2A581833FDCB004DF155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A571833FDCB004DF155 /* Foundation.framework */; };
-		018B2A5A1833FDCB004DF155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A591833FDCB004DF155 /* CoreGraphics.framework */; };
-		018B2A5C1833FDCB004DF155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A5B1833FDCB004DF155 /* UIKit.framework */; };
-		018B2A5E1833FDCB004DF155 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A5D1833FDCB004DF155 /* CoreData.framework */; };
-		018B2A641833FDCB004DF155 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018B2A621833FDCB004DF155 /* InfoPlist.strings */; };
-		018B2A661833FDCB004DF155 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 018B2A651833FDCB004DF155 /* main.m */; };
-		018B2A6A1833FDCB004DF155 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 018B2A691833FDCB004DF155 /* SSAppDelegate.m */; };
-		018B2A6D1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 018B2A6B1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld */; };
-		018B2A6F1833FDCB004DF155 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018B2A6E1833FDCB004DF155 /* Images.xcassets */; };
-		018B2A761833FDCC004DF155 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A751833FDCC004DF155 /* XCTest.framework */; };
-		018B2A771833FDCC004DF155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A571833FDCB004DF155 /* Foundation.framework */; };
-		018B2A781833FDCC004DF155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A5B1833FDCB004DF155 /* UIKit.framework */; };
-		018B2A791833FDCC004DF155 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A5D1833FDCB004DF155 /* CoreData.framework */; };
-		018B2A811833FDCC004DF155 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018B2A7F1833FDCC004DF155 /* InfoPlist.strings */; };
-		018B2A831833FDCC004DF155 /* FurnitureCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 018B2A821833FDCC004DF155 /* FurnitureCatalogTests.m */; };
-		018B2A961834022A004DF155 /* SSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018B2A941834022A004DF155 /* SSMainViewController.m */; };
-		018B2A971834022A004DF155 /* SSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018B2A951834022A004DF155 /* SSMainViewController.xib */; };
-		019CA6C7183450BF00E48132 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019CA6C6183450BF00E48132 /* Security.framework */; };
-		019CA6C9183450CF00E48132 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019CA6C8183450CF00E48132 /* CoreLocation.framework */; };
-		019CA6CB183450EE00E48132 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019CA6CA183450EE00E48132 /* SystemConfiguration.framework */; };
-		01D0796B1835389400973F12 /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0796A1835389400973F12 /* Furniture.m */; };
-		01D0796E183547A600973F12 /* SSFurnitureTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0796D183547A600973F12 /* SSFurnitureTableController.m */; };
-		01D079721835513900973F12 /* SSFurnitureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D079711835513900973F12 /* SSFurnitureTableViewCell.m */; };
-		01D079771835528B00973F12 /* SSFurnitureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D079761835528B00973F12 /* SSFurnitureTableViewCell.xib */; };
-		01D07990183587B400973F12 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D0798F183587B400973F12 /* CFNetwork.framework */; };
-		01D07A201835D1CC00973F12 /* SSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D07A1F1835D1CC00973F12 /* SSScrollView.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		018B2A7A1833FDCC004DF155 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 018B2A4C1833FDCB004DF155 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 018B2A531833FDCB004DF155;
-			remoteInfo = FurnitureCatalog;
-		};
-		01ECEF50183AC4A600AD2D8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D1614564E810060A5C5;
-			remoteInfo = RestKit;
-		};
-		01ECEF52183AC4A600AD2D8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D2614564E820060A5C5;
-			remoteInfo = RestKitTests;
-		};
-		01ECEF54183AC4A600AD2D8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E62145651060060A5C5;
-			remoteInfo = RestKitFramework;
-		};
-		01ECEF56183AC4A600AD2D8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E78145651060060A5C5;
-			remoteInfo = RestKitFrameworkTests;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		01538C86183407BD00EBB424 /* SSFurnitureDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSFurnitureDetailController.h; path = Controllers/SSFurnitureDetailController.h; sourceTree = "<group>"; };
-		01538C87183407BD00EBB424 /* SSFurnitureDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSFurnitureDetailController.m; path = Controllers/SSFurnitureDetailController.m; sourceTree = "<group>"; };
-		01538C88183407BD00EBB424 /* SSFurnitureDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSFurnitureDetailController.xib; path = Controllers/SSFurnitureDetailController.xib; sourceTree = "<group>"; };
-		01538CC61834311600EBB424 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		018B2A541833FDCB004DF155 /* FurnitureCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurnitureCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		018B2A571833FDCB004DF155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		018B2A591833FDCB004DF155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		018B2A5B1833FDCB004DF155 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		018B2A5D1833FDCB004DF155 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		018B2A611833FDCB004DF155 /* FurnitureCatalog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FurnitureCatalog-Info.plist"; sourceTree = "<group>"; };
-		018B2A631833FDCB004DF155 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		018B2A651833FDCB004DF155 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		018B2A671833FDCB004DF155 /* FurnitureCatalog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FurnitureCatalog-Prefix.pch"; sourceTree = "<group>"; };
-		018B2A681833FDCB004DF155 /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
-		018B2A691833FDCB004DF155 /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
-		018B2A6C1833FDCB004DF155 /* FurnitureCatalog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FurnitureCatalog.xcdatamodel; sourceTree = "<group>"; };
-		018B2A6E1833FDCB004DF155 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		018B2A741833FDCC004DF155 /* FurnitureCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FurnitureCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		018B2A751833FDCC004DF155 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		018B2A7E1833FDCC004DF155 /* FurnitureCatalogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FurnitureCatalogTests-Info.plist"; sourceTree = "<group>"; };
-		018B2A801833FDCC004DF155 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		018B2A821833FDCC004DF155 /* FurnitureCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FurnitureCatalogTests.m; sourceTree = "<group>"; };
-		018B2A931834022A004DF155 /* SSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMainViewController.h; path = Controllers/SSMainViewController.h; sourceTree = "<group>"; };
-		018B2A941834022A004DF155 /* SSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMainViewController.m; path = Controllers/SSMainViewController.m; sourceTree = "<group>"; };
-		018B2A951834022A004DF155 /* SSMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSMainViewController.xib; path = Controllers/SSMainViewController.xib; sourceTree = "<group>"; };
-		019CA6C6183450BF00E48132 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		019CA6C8183450CF00E48132 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		019CA6CA183450EE00E48132 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		01D079691835389400973F12 /* Furniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Furniture.h; path = Model/Furniture.h; sourceTree = "<group>"; };
-		01D0796A1835389400973F12 /* Furniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Furniture.m; path = Model/Furniture.m; sourceTree = "<group>"; };
-		01D0796C183547A600973F12 /* SSFurnitureTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSFurnitureTableController.h; path = Controllers/SSFurnitureTableController.h; sourceTree = "<group>"; };
-		01D0796D183547A600973F12 /* SSFurnitureTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSFurnitureTableController.m; path = Controllers/SSFurnitureTableController.m; sourceTree = "<group>"; };
-		01D079701835513900973F12 /* SSFurnitureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSFurnitureTableViewCell.h; path = View/SSFurnitureTableViewCell.h; sourceTree = "<group>"; };
-		01D079711835513900973F12 /* SSFurnitureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSFurnitureTableViewCell.m; path = View/SSFurnitureTableViewCell.m; sourceTree = "<group>"; };
-		01D079761835528B00973F12 /* SSFurnitureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFurnitureTableViewCell.xib; sourceTree = "<group>"; };
-		01D0798F183587B400973F12 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		01D07A1E1835D1CC00973F12 /* SSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSScrollView.h; path = View/SSScrollView.h; sourceTree = "<group>"; };
-		01D07A1F1835D1CC00973F12 /* SSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSScrollView.m; path = View/SSScrollView.m; sourceTree = "<group>"; };
-		01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		018B2A511833FDCB004DF155 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01D07990183587B400973F12 /* CFNetwork.framework in Frameworks */,
-				019CA6CB183450EE00E48132 /* SystemConfiguration.framework in Frameworks */,
-				019CA6C9183450CF00E48132 /* CoreLocation.framework in Frameworks */,
-				019CA6C7183450BF00E48132 /* Security.framework in Frameworks */,
-				01538CC71834311600EBB424 /* MobileCoreServices.framework in Frameworks */,
-				018B2A5A1833FDCB004DF155 /* CoreGraphics.framework in Frameworks */,
-				018B2A5E1833FDCB004DF155 /* CoreData.framework in Frameworks */,
-				018B2A5C1833FDCB004DF155 /* UIKit.framework in Frameworks */,
-				018B2A581833FDCB004DF155 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		018B2A711833FDCC004DF155 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				018B2A761833FDCC004DF155 /* XCTest.framework in Frameworks */,
-				018B2A791833FDCC004DF155 /* CoreData.framework in Frameworks */,
-				018B2A781833FDCC004DF155 /* UIKit.framework in Frameworks */,
-				018B2A771833FDCC004DF155 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		018B2A4B1833FDCB004DF155 = {
-			isa = PBXGroup;
-			children = (
-				01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */,
-				018B2A561833FDCB004DF155 /* Frameworks */,
-				018B2A5F1833FDCB004DF155 /* FurnitureCatalog */,
-				018B2A7C1833FDCC004DF155 /* FurnitureCatalogTests */,
-				018B2A551833FDCB004DF155 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		018B2A551833FDCB004DF155 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				018B2A541833FDCB004DF155 /* FurnitureCatalog.app */,
-				018B2A741833FDCC004DF155 /* FurnitureCatalogTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		018B2A561833FDCB004DF155 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				01D0798F183587B400973F12 /* CFNetwork.framework */,
-				019CA6CA183450EE00E48132 /* SystemConfiguration.framework */,
-				019CA6C8183450CF00E48132 /* CoreLocation.framework */,
-				019CA6C6183450BF00E48132 /* Security.framework */,
-				01538CC61834311600EBB424 /* MobileCoreServices.framework */,
-				018B2A571833FDCB004DF155 /* Foundation.framework */,
-				018B2A591833FDCB004DF155 /* CoreGraphics.framework */,
-				018B2A5B1833FDCB004DF155 /* UIKit.framework */,
-				018B2A5D1833FDCB004DF155 /* CoreData.framework */,
-				018B2A751833FDCC004DF155 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		018B2A5F1833FDCB004DF155 /* FurnitureCatalog */ = {
-			isa = PBXGroup;
-			children = (
-				01D0796F183550EA00973F12 /* Views */,
-				01D079681835380C00973F12 /* Model */,
-				018B2A681833FDCB004DF155 /* SSAppDelegate.h */,
-				018B2A691833FDCB004DF155 /* SSAppDelegate.m */,
-				018B2A931834022A004DF155 /* SSMainViewController.h */,
-				018B2A941834022A004DF155 /* SSMainViewController.m */,
-				01D07A1E1835D1CC00973F12 /* SSScrollView.h */,
-				01D07A1F1835D1CC00973F12 /* SSScrollView.m */,
-				01538C86183407BD00EBB424 /* SSFurnitureDetailController.h */,
-				01538C87183407BD00EBB424 /* SSFurnitureDetailController.m */,
-				01D0796C183547A600973F12 /* SSFurnitureTableController.h */,
-				01D0796D183547A600973F12 /* SSFurnitureTableController.m */,
-				018B2A6E1833FDCB004DF155 /* Images.xcassets */,
-				018B2A6B1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld */,
-				01D079731835516000973F12 /* Resources */,
-				018B2A601833FDCB004DF155 /* Supporting Files */,
-			);
-			path = FurnitureCatalog;
-			sourceTree = "<group>";
-		};
-		018B2A601833FDCB004DF155 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				018B2A611833FDCB004DF155 /* FurnitureCatalog-Info.plist */,
-				018B2A621833FDCB004DF155 /* InfoPlist.strings */,
-				018B2A651833FDCB004DF155 /* main.m */,
-				018B2A671833FDCB004DF155 /* FurnitureCatalog-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		018B2A7C1833FDCC004DF155 /* FurnitureCatalogTests */ = {
-			isa = PBXGroup;
-			children = (
-				018B2A821833FDCC004DF155 /* FurnitureCatalogTests.m */,
-				018B2A7D1833FDCC004DF155 /* Supporting Files */,
-			);
-			path = FurnitureCatalogTests;
-			sourceTree = "<group>";
-		};
-		018B2A7D1833FDCC004DF155 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				018B2A7E1833FDCC004DF155 /* FurnitureCatalogTests-Info.plist */,
-				018B2A7F1833FDCC004DF155 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		01D079681835380C00973F12 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				01D079691835389400973F12 /* Furniture.h */,
-				01D0796A1835389400973F12 /* Furniture.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		01D0796F183550EA00973F12 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01D079701835513900973F12 /* SSFurnitureTableViewCell.h */,
-				01D079711835513900973F12 /* SSFurnitureTableViewCell.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		01D079731835516000973F12 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				01538C88183407BD00EBB424 /* SSFurnitureDetailController.xib */,
-				01D079761835528B00973F12 /* SSFurnitureTableViewCell.xib */,
-				018B2A951834022A004DF155 /* SSMainViewController.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		01ECEF4A183AC4A400AD2D8B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				01ECEF51183AC4A600AD2D8B /* libRestKit.a */,
-				01ECEF53183AC4A600AD2D8B /* RestKitTests.octest */,
-				01ECEF55183AC4A600AD2D8B /* RestKit.framework */,
-				01ECEF57183AC4A600AD2D8B /* RestKitFrameworkTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		018B2A531833FDCB004DF155 /* FurnitureCatalog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 018B2A861833FDCC004DF155 /* Build configuration list for PBXNativeTarget "FurnitureCatalog" */;
-			buildPhases = (
-				018B2A501833FDCB004DF155 /* Sources */,
-				018B2A511833FDCB004DF155 /* Frameworks */,
-				018B2A521833FDCB004DF155 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FurnitureCatalog;
-			productName = FurnitureCatalog;
-			productReference = 018B2A541833FDCB004DF155 /* FurnitureCatalog.app */;
-			productType = "com.apple.product-type.application";
-		};
-		018B2A731833FDCC004DF155 /* FurnitureCatalogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 018B2A891833FDCC004DF155 /* Build configuration list for PBXNativeTarget "FurnitureCatalogTests" */;
-			buildPhases = (
-				018B2A701833FDCC004DF155 /* Sources */,
-				018B2A711833FDCC004DF155 /* Frameworks */,
-				018B2A721833FDCC004DF155 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				018B2A7B1833FDCC004DF155 /* PBXTargetDependency */,
-			);
-			name = FurnitureCatalogTests;
-			productName = FurnitureCatalogTests;
-			productReference = 018B2A741833FDCC004DF155 /* FurnitureCatalogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		018B2A4C1833FDCB004DF155 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = SS;
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Scott Richards";
-				TargetAttributes = {
-					018B2A731833FDCC004DF155 = {
-						TestTargetID = 018B2A531833FDCB004DF155;
-					};
-				};
-			};
-			buildConfigurationList = 018B2A4F1833FDCB004DF155 /* Build configuration list for PBXProject "FurnitureCatalog" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 018B2A4B1833FDCB004DF155;
-			productRefGroup = 018B2A551833FDCB004DF155 /* Products */;
-			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 01ECEF4A183AC4A400AD2D8B /* Products */;
-					ProjectRef = 01ECEF49183AC4A400AD2D8B /* RestKit.xcodeproj */;
-				},
-			);
-			projectRoot = "";
-			targets = (
-				018B2A531833FDCB004DF155 /* FurnitureCatalog */,
-				018B2A731833FDCC004DF155 /* FurnitureCatalogTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		01ECEF51183AC4A600AD2D8B /* libRestKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKit.a;
-			remoteRef = 01ECEF50183AC4A600AD2D8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		01ECEF53183AC4A600AD2D8B /* RestKitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitTests.octest;
-			remoteRef = 01ECEF52183AC4A600AD2D8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		01ECEF55183AC4A600AD2D8B /* RestKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RestKit.framework;
-			remoteRef = 01ECEF54183AC4A600AD2D8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		01ECEF57183AC4A600AD2D8B /* RestKitFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitFrameworkTests.octest;
-			remoteRef = 01ECEF56183AC4A600AD2D8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
-/* Begin PBXResourcesBuildPhase section */
-		018B2A521833FDCB004DF155 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01D079771835528B00973F12 /* SSFurnitureTableViewCell.xib in Resources */,
-				018B2A641833FDCB004DF155 /* InfoPlist.strings in Resources */,
-				01538C8A183407BD00EBB424 /* SSFurnitureDetailController.xib in Resources */,
-				018B2A6F1833FDCB004DF155 /* Images.xcassets in Resources */,
-				018B2A971834022A004DF155 /* SSMainViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		018B2A721833FDCC004DF155 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				018B2A811833FDCC004DF155 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		018B2A501833FDCB004DF155 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01D0796B1835389400973F12 /* Furniture.m in Sources */,
-				018B2A6A1833FDCB004DF155 /* SSAppDelegate.m in Sources */,
-				01D079721835513900973F12 /* SSFurnitureTableViewCell.m in Sources */,
-				01D07A201835D1CC00973F12 /* SSScrollView.m in Sources */,
-				01D0796E183547A600973F12 /* SSFurnitureTableController.m in Sources */,
-				018B2A6D1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld in Sources */,
-				018B2A661833FDCB004DF155 /* main.m in Sources */,
-				01538C89183407BD00EBB424 /* SSFurnitureDetailController.m in Sources */,
-				018B2A961834022A004DF155 /* SSMainViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		018B2A701833FDCC004DF155 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				018B2A831833FDCC004DF155 /* FurnitureCatalogTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		018B2A7B1833FDCC004DF155 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 018B2A531833FDCB004DF155 /* FurnitureCatalog */;
-			targetProxy = 018B2A7A1833FDCC004DF155 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		018B2A621833FDCB004DF155 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				018B2A631833FDCB004DF155 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		018B2A7F1833FDCC004DF155 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				018B2A801833FDCC004DF155 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		018B2A841833FDCC004DF155 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		018B2A851833FDCC004DF155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		018B2A871833FDCC004DF155 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FurnitureCatalog/FurnitureCatalog-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
-				);
-				INFOPLIST_FILE = "FurnitureCatalog/FurnitureCatalog-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/scottrichards/Documents/iOS/FurnitureCatalog/StackMob-v2.2.0",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		018B2A881833FDCC004DF155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FurnitureCatalog/FurnitureCatalog-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
-				);
-				INFOPLIST_FILE = "FurnitureCatalog/FurnitureCatalog-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/scottrichards/Documents/iOS/FurnitureCatalog/StackMob-v2.2.0",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		018B2A8A1833FDCC004DF155 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FurnitureCatalog.app/FurnitureCatalog";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FurnitureCatalog/FurnitureCatalog-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "FurnitureCatalogTests/FurnitureCatalogTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		018B2A8B1833FDCC004DF155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FurnitureCatalog.app/FurnitureCatalog";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FurnitureCatalog/FurnitureCatalog-Prefix.pch";
-				INFOPLIST_FILE = "FurnitureCatalogTests/FurnitureCatalogTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		018B2A4F1833FDCB004DF155 /* Build configuration list for PBXProject "FurnitureCatalog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				018B2A841833FDCC004DF155 /* Debug */,
-				018B2A851833FDCC004DF155 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		018B2A861833FDCC004DF155 /* Build configuration list for PBXNativeTarget "FurnitureCatalog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				018B2A871833FDCC004DF155 /* Debug */,
-				018B2A881833FDCC004DF155 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		018B2A891833FDCC004DF155 /* Build configuration list for PBXNativeTarget "FurnitureCatalogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				018B2A8A1833FDCC004DF155 /* Debug */,
-				018B2A8B1833FDCC004DF155 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		018B2A6B1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				018B2A6C1833FDCB004DF155 /* FurnitureCatalog.xcdatamodel */,
-			);
-			currentVersion = 018B2A6C1833FDCB004DF155 /* FurnitureCatalog.xcdatamodel */;
-			path = FurnitureCatalog.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 018B2A4C1833FDCB004DF155 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>01538C86183407BD00EBB424</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SSFurnitureDetailController.h</string>
+			<key>path</key>
+			<string>Controllers/SSFurnitureDetailController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01538C87183407BD00EBB424</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SSFurnitureDetailController.m</string>
+			<key>path</key>
+			<string>Controllers/SSFurnitureDetailController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01538C88183407BD00EBB424</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>SSFurnitureDetailController.xib</string>
+			<key>path</key>
+			<string>Controllers/SSFurnitureDetailController.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01538C89183407BD00EBB424</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01538C87183407BD00EBB424</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01538C8A183407BD00EBB424</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01538C88183407BD00EBB424</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01538CC61834311600EBB424</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MobileCoreServices.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>01538CC71834311600EBB424</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01538CC61834311600EBB424</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A4B1833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A561833FDCB004DF155</string>
+				<string>018B2A5F1833FDCB004DF155</string>
+				<string>018B2A7C1833FDCC004DF155</string>
+				<string>018B2A551833FDCB004DF155</string>
+				<string>8B96FE5659BD4971A6321062</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A4C1833FDCB004DF155</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>SS</string>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Scott Richards</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>018B2A731833FDCC004DF155</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>018B2A531833FDCB004DF155</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>018B2A4F1833FDCB004DF155</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>018B2A4B1833FDCB004DF155</string>
+			<key>productRefGroup</key>
+			<string>018B2A551833FDCB004DF155</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>018B2A531833FDCB004DF155</string>
+				<string>018B2A731833FDCC004DF155</string>
+			</array>
+		</dict>
+		<key>018B2A4F1833FDCB004DF155</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>018B2A841833FDCC004DF155</string>
+				<string>018B2A851833FDCC004DF155</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>018B2A501833FDCB004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>01D0796B1835389400973F12</string>
+				<string>018B2A6A1833FDCB004DF155</string>
+				<string>01D079721835513900973F12</string>
+				<string>01D07A201835D1CC00973F12</string>
+				<string>01D0796E183547A600973F12</string>
+				<string>018B2A6D1833FDCB004DF155</string>
+				<string>018B2A661833FDCB004DF155</string>
+				<string>01538C89183407BD00EBB424</string>
+				<string>018B2A961834022A004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A511833FDCB004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>01D07990183587B400973F12</string>
+				<string>019CA6CB183450EE00E48132</string>
+				<string>019CA6C9183450CF00E48132</string>
+				<string>019CA6C7183450BF00E48132</string>
+				<string>01538CC71834311600EBB424</string>
+				<string>018B2A5A1833FDCB004DF155</string>
+				<string>018B2A5E1833FDCB004DF155</string>
+				<string>018B2A5C1833FDCB004DF155</string>
+				<string>018B2A581833FDCB004DF155</string>
+				<string>5CA445AEDFAF496988DA38A3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A521833FDCB004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>01D079771835528B00973F12</string>
+				<string>018B2A641833FDCB004DF155</string>
+				<string>01538C8A183407BD00EBB424</string>
+				<string>018B2A6F1833FDCB004DF155</string>
+				<string>018B2A971834022A004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A531833FDCB004DF155</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>018B2A861833FDCC004DF155</string>
+			<key>buildPhases</key>
+			<array>
+				<string>65F06D6ACB734CA2AA866B97</string>
+				<string>018B2A501833FDCB004DF155</string>
+				<string>018B2A511833FDCB004DF155</string>
+				<string>018B2A521833FDCB004DF155</string>
+				<string>C11E3859EED643448C26175D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FurnitureCatalog</string>
+			<key>productName</key>
+			<string>FurnitureCatalog</string>
+			<key>productReference</key>
+			<string>018B2A541833FDCB004DF155</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>018B2A541833FDCB004DF155</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FurnitureCatalog.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>018B2A551833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A541833FDCB004DF155</string>
+				<string>018B2A741833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A561833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01D0798F183587B400973F12</string>
+				<string>019CA6CA183450EE00E48132</string>
+				<string>019CA6C8183450CF00E48132</string>
+				<string>019CA6C6183450BF00E48132</string>
+				<string>01538CC61834311600EBB424</string>
+				<string>018B2A571833FDCB004DF155</string>
+				<string>018B2A591833FDCB004DF155</string>
+				<string>018B2A5B1833FDCB004DF155</string>
+				<string>018B2A5D1833FDCB004DF155</string>
+				<string>018B2A751833FDCC004DF155</string>
+				<string>2A463D0731334AB4AE1B5679</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A571833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>018B2A581833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A571833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A591833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>018B2A5A1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A591833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A5B1833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>018B2A5C1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A5B1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A5D1833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreData.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreData.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>018B2A5E1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A5D1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A5F1833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01D0796F183550EA00973F12</string>
+				<string>01D079681835380C00973F12</string>
+				<string>018B2A681833FDCB004DF155</string>
+				<string>018B2A691833FDCB004DF155</string>
+				<string>018B2A931834022A004DF155</string>
+				<string>018B2A941834022A004DF155</string>
+				<string>01D07A1E1835D1CC00973F12</string>
+				<string>01D07A1F1835D1CC00973F12</string>
+				<string>01538C86183407BD00EBB424</string>
+				<string>01538C87183407BD00EBB424</string>
+				<string>01D0796C183547A600973F12</string>
+				<string>01D0796D183547A600973F12</string>
+				<string>018B2A6E1833FDCB004DF155</string>
+				<string>018B2A6B1833FDCB004DF155</string>
+				<string>01D079731835516000973F12</string>
+				<string>018B2A601833FDCB004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FurnitureCatalog</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A601833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A611833FDCB004DF155</string>
+				<string>018B2A621833FDCB004DF155</string>
+				<string>018B2A651833FDCB004DF155</string>
+				<string>018B2A671833FDCB004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A611833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>FurnitureCatalog-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A621833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A631833FDCB004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A631833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A641833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A621833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A651833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A661833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A651833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A671833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FurnitureCatalog-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A681833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SSAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A691833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SSAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A6A1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A691833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A6B1833FDCB004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A6C1833FDCB004DF155</string>
+			</array>
+			<key>currentVersion</key>
+			<string>018B2A6C1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>FurnitureCatalog.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>018B2A6C1833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>FurnitureCatalog.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A6D1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A6B1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A6E1833FDCB004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A6F1833FDCB004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A6E1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A701833FDCC004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>018B2A831833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A711833FDCC004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>018B2A761833FDCC004DF155</string>
+				<string>018B2A791833FDCC004DF155</string>
+				<string>018B2A781833FDCC004DF155</string>
+				<string>018B2A771833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A721833FDCC004DF155</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>018B2A811833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>018B2A731833FDCC004DF155</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>018B2A891833FDCC004DF155</string>
+			<key>buildPhases</key>
+			<array>
+				<string>018B2A701833FDCC004DF155</string>
+				<string>018B2A711833FDCC004DF155</string>
+				<string>018B2A721833FDCC004DF155</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>018B2A7B1833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FurnitureCatalogTests</string>
+			<key>productName</key>
+			<string>FurnitureCatalogTests</string>
+			<key>productReference</key>
+			<string>018B2A741833FDCC004DF155</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>018B2A741833FDCC004DF155</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FurnitureCatalogTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>018B2A751833FDCC004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>018B2A761833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A751833FDCC004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A771833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A571833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A781833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A5B1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A791833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A5D1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A7A1833FDCC004DF155</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>018B2A4C1833FDCB004DF155</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>018B2A531833FDCB004DF155</string>
+			<key>remoteInfo</key>
+			<string>FurnitureCatalog</string>
+		</dict>
+		<key>018B2A7B1833FDCC004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>018B2A531833FDCB004DF155</string>
+			<key>targetProxy</key>
+			<string>018B2A7A1833FDCC004DF155</string>
+		</dict>
+		<key>018B2A7C1833FDCC004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A821833FDCC004DF155</string>
+				<string>018B2A7D1833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FurnitureCatalogTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A7D1833FDCC004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A7E1833FDCC004DF155</string>
+				<string>018B2A7F1833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A7E1833FDCC004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>FurnitureCatalogTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A7F1833FDCC004DF155</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>018B2A801833FDCC004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A801833FDCC004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A811833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A7F1833FDCC004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A821833FDCC004DF155</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FurnitureCatalogTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A831833FDCC004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A821833FDCC004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A841833FDCC004DF155</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>018B2A851833FDCC004DF155</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>018B2A861833FDCC004DF155</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>018B2A871833FDCC004DF155</string>
+				<string>018B2A881833FDCC004DF155</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>018B2A871833FDCC004DF155</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8B96FE5659BD4971A6321062</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Prefix.pch</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>/Applications/Xcode5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include</string>
+					<string>"$(BUILT_PRODUCTS_DIR)/../../Headers"</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Info.plist</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>/Users/scottrichards/Documents/iOS/FurnitureCatalog/StackMob-v2.2.0</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string>-ObjC</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>018B2A881833FDCC004DF155</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8B96FE5659BD4971A6321062</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Prefix.pch</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>/Applications/Xcode5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include</string>
+					<string>"$(BUILT_PRODUCTS_DIR)/../../Headers"</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Info.plist</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>/Users/scottrichards/Documents/iOS/FurnitureCatalog/StackMob-v2.2.0</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string>-ObjC</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>018B2A891833FDCC004DF155</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>018B2A8A1833FDCC004DF155</string>
+				<string>018B2A8B1833FDCC004DF155</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>018B2A8A1833FDCC004DF155</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/FurnitureCatalog.app/FurnitureCatalog</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>FurnitureCatalogTests/FurnitureCatalogTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>018B2A8B1833FDCC004DF155</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/FurnitureCatalog.app/FurnitureCatalog</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>FurnitureCatalog/FurnitureCatalog-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>FurnitureCatalogTests/FurnitureCatalogTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>018B2A931834022A004DF155</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SSMainViewController.h</string>
+			<key>path</key>
+			<string>Controllers/SSMainViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A941834022A004DF155</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SSMainViewController.m</string>
+			<key>path</key>
+			<string>Controllers/SSMainViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A951834022A004DF155</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>SSMainViewController.xib</string>
+			<key>path</key>
+			<string>Controllers/SSMainViewController.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>018B2A961834022A004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A941834022A004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018B2A971834022A004DF155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>018B2A951834022A004DF155</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>019CA6C6183450BF00E48132</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Security.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Security.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>019CA6C7183450BF00E48132</key>
+		<dict>
+			<key>fileRef</key>
+			<string>019CA6C6183450BF00E48132</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>019CA6C8183450CF00E48132</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>019CA6C9183450CF00E48132</key>
+		<dict>
+			<key>fileRef</key>
+			<string>019CA6C8183450CF00E48132</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>019CA6CA183450EE00E48132</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SystemConfiguration.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/SystemConfiguration.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>019CA6CB183450EE00E48132</key>
+		<dict>
+			<key>fileRef</key>
+			<string>019CA6CA183450EE00E48132</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D079681835380C00973F12</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01D079691835389400973F12</string>
+				<string>01D0796A1835389400973F12</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079691835389400973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Furniture.h</string>
+			<key>path</key>
+			<string>Model/Furniture.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D0796A1835389400973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Furniture.m</string>
+			<key>path</key>
+			<string>Model/Furniture.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D0796B1835389400973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D0796A1835389400973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D0796C183547A600973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SSFurnitureTableController.h</string>
+			<key>path</key>
+			<string>Controllers/SSFurnitureTableController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D0796D183547A600973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SSFurnitureTableController.m</string>
+			<key>path</key>
+			<string>Controllers/SSFurnitureTableController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D0796E183547A600973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D0796D183547A600973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D0796F183550EA00973F12</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01D079701835513900973F12</string>
+				<string>01D079711835513900973F12</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079701835513900973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SSFurnitureTableViewCell.h</string>
+			<key>path</key>
+			<string>View/SSFurnitureTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079711835513900973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SSFurnitureTableViewCell.m</string>
+			<key>path</key>
+			<string>View/SSFurnitureTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079721835513900973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D079711835513900973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D079731835516000973F12</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01538C88183407BD00EBB424</string>
+				<string>01D079761835528B00973F12</string>
+				<string>018B2A951834022A004DF155</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079761835528B00973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SSFurnitureTableViewCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D079771835528B00973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D079761835528B00973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D0798F183587B400973F12</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CFNetwork.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CFNetwork.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>01D07990183587B400973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D0798F183587B400973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01D07A1E1835D1CC00973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SSScrollView.h</string>
+			<key>path</key>
+			<string>View/SSScrollView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D07A1F1835D1CC00973F12</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SSScrollView.m</string>
+			<key>path</key>
+			<string>View/SSScrollView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01D07A201835D1CC00973F12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01D07A1F1835D1CC00973F12</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2A463D0731334AB4AE1B5679</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>5CA445AEDFAF496988DA38A3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2A463D0731334AB4AE1B5679</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>65F06D6ACB734CA2AA866B97</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>8B96FE5659BD4971A6321062</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C11E3859EED643448C26175D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>018B2A4C1833FDCB004DF155</string>
+</dict>
+</plist>
