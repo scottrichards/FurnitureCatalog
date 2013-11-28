@@ -11,6 +11,35 @@
 
 @implementation SSStackMobRESTApi
 
+- (void)setupCoreData
+{
+    // Configure RestKit's Core Data stack
+    NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"FurnitureCatalog" ofType:@"momd"]];
+    
+    // Due to an iOS 5 bug, the managed object model returned is immutable.
+    NSManagedObjectModel *managedObjectModel = [[[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL] mutableCopy];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    
+    [managedObjectStore createPersistentStoreCoordinator];
+    
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"FurnitureCatalog.sqlite"];
+    NSError *error = nil;
+    [managedObjectStore addSQLitePersistentStoreAtPath:storePath fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+    
+    // Create default contexts
+    // For main thread and background processing
+    [managedObjectStore createManagedObjectContexts];
+ 
+
+    // Set the default store shared instance
+    [RKManagedObjectStore setDefaultStore:managedObjectStore];
+    
+
+    // Assign Managed object store to Object manager
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    manager.managedObjectStore = managedObjectStore;
+}
+
 - (void)setupObjectManager
 {
     // Set the base Url. Remember not to put `/` at the end.
@@ -69,11 +98,22 @@
     // If we will provide the rootKeyPath, serialization will nest under the 'provided' key path
     RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:itemClass rootKeyPath:nil method:RKRequestMethodAny];
     [manager addRequestDescriptor:requestDescriptor];
+ 
+#ifdef USE_CORE_DATA
+    // Get default managed object store
+    RKManagedObjectStore *managedObjectStore = [RKManagedObjectStore defaultStore];
     
+    // Create mapping for entity
+    RKEntityMapping *responseMapping = [RKEntityMapping mappingForEntityForName:@"Furniture" inManagedObjectStore:managedObjectStore];
+    
+    // How to identify if the object we got is in database
+    // Here, we identify by name.
+    responseMapping.identificationAttributes = @[@"name"];
+#else
     RKObjectMapping *responseMapping = [RKObjectMapping mappingForClass:itemClass];
-    
+#endif
     // This is where you put any fields that do not map up directly
-//    [responseMapping addAttributeMappingsFromDictionary:@{@"userfurniture_id":@"id"}];
+    [responseMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category",@"price"]];
     
     // The root JSON key path. nil in our case states that there won't be one.
     NSString *keyPath = nil;
@@ -100,11 +140,42 @@
     
     // Add defined routes to the Object Manager router
     [manager.router.routeSet addRoutes:@[itemsRoute, newItemRoute]];
+// USE CORE DATA
+#if 0
+    // Deleating orphaned objects
+    // Define Fetch request to trigger on specific url
+    [manager addFetchRequestBlock:^NSFetchRequest *(NSURL *URL) {
+        // Create a path matcher
+        RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:itemsPath];
+        
+        // Dictionary to store request arguments
+        // databaseID in our case is what we are looking for
+        NSDictionary *argsDict = nil;
+        
+        // Match the URL with pathMatcher and retrieve arguments
+        BOOL match = [pathMatcher matchesPath:[URL relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
+        
+        // If url matched, create NSFetchRequest
+        if (match) {
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            // Edit the entity name as appropriate.
+            RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+            NSManagedObjectContext *managedObjectContext = [defaultStore persistentStoreManagedObjectContext];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture" inManagedObjectContext:managedObjectContext];
+            [fetchRequest setEntity:entity];
+            return fetchRequest;
+        }
+        
+        return nil;
+    }];
+#endif
 }
 
-- (void)simpleAddItem:(Furniture *)newItem
+
+- (void)addFurniture:(Furniture *)newItem
 {
     RKObjectManager *manager = [RKObjectManager sharedManager];
+// Don't think I need this anymore
     [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
     [manager postObject:newItem path:nil parameters:nil
                 success: ^( RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -114,4 +185,18 @@
                     NSLog(@"error");
                 }];
 }
+
+- (void)getFurnitureList
+{
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
+    [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
+                      success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
+                          NSLog(@"done");
+                      }
+                      failure: ^( RKObjectRequestOperation *operation, NSError *error) {
+                          NSLog(@"error");
+                      }];
+}
+
 @end

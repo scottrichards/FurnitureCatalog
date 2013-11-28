@@ -14,10 +14,12 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+#if 0
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+#endif
 @property (strong, nonatomic) SSStackMobRESTApi *stackMobRESTApi;
 
 - (void)saveContext;

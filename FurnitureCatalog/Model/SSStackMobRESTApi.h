@@ -12,5 +12,7 @@
 
 - (void)setupObjectManager;
 - (void)setupMappings;
+- (void)setupCoreData;
+- (void)getFurnitureList;
 
 @end

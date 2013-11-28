@@ -17,4 +17,5 @@
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <RestKit/RestKit.h>
+#define USE_CORE_DATA 1
 #endif

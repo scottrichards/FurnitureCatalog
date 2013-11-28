@@ -12,17 +12,19 @@
 #import "SSFurnitureTableController.h"
 
 @implementation SSAppDelegate
-
+#if 0
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
+#endif
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
     self.stackMobRESTApi = [[SSStackMobRESTApi alloc] init];
     [self.stackMobRESTApi setupObjectManager];
+    [self.stackMobRESTApi setupCoreData];
     [self.stackMobRESTApi setupMappings];
+    [self.stackMobRESTApi getFurnitureList];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -74,9 +76,12 @@
 - (void)saveContext
 {
     NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+//    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+    NSManagedObjectContext *managedObjectContext = [defaultStore persistentStoreManagedObjectContext];
     if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+        BOOL thereWereChanges = [managedObjectContext hasChanges];
+        if (thereWereChanges && ![managedObjectContext save:&error]) {
              // Replace this implementation with code to handle the error appropriately.
              // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -90,7 +95,7 @@
 }
 
 #pragma mark - Core Data stack
-
+#if 0
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
@@ -161,6 +166,7 @@
     
     return _persistentStoreCoordinator;
 }
+#endif
 
 #pragma mark - Application's Documents directory
 

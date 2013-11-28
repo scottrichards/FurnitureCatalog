@@ -11,6 +11,7 @@
 #import "SSFurnitureDetailController.h"
 #import "SSFurnitureTableViewCell.h"
 #import "Furniture.h"
+#import "SSStackMobRESTApi.h"
 
 @interface SSFurnitureTableController ()
 
@@ -181,8 +182,12 @@
 
 
 - (void) loadTableData {
-    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+ //   SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+ //   NSManagedObjectContext *context = [appDelegate managedObjectContext];
+#if 1
+    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+    NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
+    
     // Construct a fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture"
@@ -196,6 +201,29 @@
     NSError *error = nil;
     self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
     [self.tableView reloadData];
+#else   // Load the table contents directly from the StackMob API
+ //   SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+ //   SSStackMobRESTApi *restAPI = appDelegate.stackMobRESTApi;
+
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
+    [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
+                      success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
+                          NSLog(@"done");
+                          self.furnitureArray = [result array];
+                          [self.tableView reloadData];
+                          SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                          [appDelegate saveContext];
+                      }
+                      failure: ^( RKObjectRequestOperation *operation, NSError *error) {
+                          NSLog(@"error");
+                      }];
+
+#endif
 }
+
+
+
+
 
 @end

@@ -91,9 +91,10 @@
 
 - (void) create:(id)sender
 {
-    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    // Grab the context
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+//    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+    NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
     Furniture *furniture;
     // Grab the Label entity
     if (self.newItem)
