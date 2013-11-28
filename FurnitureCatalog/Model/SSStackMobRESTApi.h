@@ -15,4 +15,6 @@
 - (void)setupCoreData;
 - (void)getFurnitureList;
 
+@property (assign, nonatomic) BOOL appIsOnline;
+
 @end

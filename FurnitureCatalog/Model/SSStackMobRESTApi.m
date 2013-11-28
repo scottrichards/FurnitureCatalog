@@ -8,6 +8,7 @@
 
 #import "SSStackMobRESTApi.h"
 #import "Furniture.h"
+#import "SSAppDelegate.h"
 
 @implementation SSStackMobRESTApi
 
@@ -75,6 +76,21 @@
     // Show activity indicator in status bar
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
+    // Reachability
+    [manager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"There is no network connection"
+                                                            message:@"You must be connected to the internet to use this app."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            self.appIsOnline = false;
+            [alert show];
+            
+        } else {
+            self.appIsOnline = true;
+        }
+    }];
 }
 
 - (void)setupMappings
@@ -154,7 +170,7 @@
         
         // Match the URL with pathMatcher and retrieve arguments
         BOOL match = [pathMatcher matchesPath:[URL relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
-        
+#if 0
         // If url matched, create NSFetchRequest
         if (match) {
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -164,8 +180,21 @@
             NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture" inManagedObjectContext:managedObjectContext];
             [fetchRequest setEntity:entity];
             return fetchRequest;
+            
         }
-        
+#else
+        if (match) {
+            NSString *userFurnitureID = [argsDict objectForKey:@"userfurniture_id"];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userfurniture_id = %@", userFurnitureID];
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+            NSManagedObjectContext *managedObjectContext = [defaultStore persistentStoreManagedObjectContext];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture" inManagedObjectContext:managedObjectContext];
+            [fetchRequest setEntity:entity];
+            [fetchRequest setPredicate:predicate];
+            return fetchRequest;
+        }
+#endif
         return nil;
     }];
 #endif
@@ -188,7 +217,7 @@
 
 - (void)getFurnitureList
 {
-    RKObjectManager *manager = [RKObjectManager sharedManager];
+ /*   RKObjectManager *manager = [RKObjectManager sharedManager];
     [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
     [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
                       success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
@@ -196,7 +225,22 @@
                       }
                       failure: ^( RKObjectRequestOperation *operation, NSError *error) {
                           NSLog(@"error");
+                      }];*/
+    
+    
+        
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
+    [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
+                      success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
+                          NSLog(@"Retrieved Furniture List");
+                          SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                          [appDelegate saveContext];
+                      }
+                      failure: ^( RKObjectRequestOperation *operation, NSError *error) {
+                          NSLog(@"ERROR Failed to Retrieve Furniture List");
                       }];
+
 }
 
 @end

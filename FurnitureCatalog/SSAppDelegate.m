@@ -11,12 +11,12 @@
 #import "SSStackMobRESTApi.h"
 #import "SSFurnitureTableController.h"
 
+// For Reachability
+#import "AFHTTPClient.h"
+
 @implementation SSAppDelegate
-#if 0
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-#endif
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
@@ -24,6 +24,7 @@
     [self.stackMobRESTApi setupObjectManager];
     [self.stackMobRESTApi setupCoreData];
     [self.stackMobRESTApi setupMappings];
+        
     [self.stackMobRESTApi getFurnitureList];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

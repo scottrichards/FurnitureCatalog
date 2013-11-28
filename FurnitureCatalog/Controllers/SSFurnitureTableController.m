@@ -182,44 +182,40 @@
 
 
 - (void) loadTableData {
- //   SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
- //   NSManagedObjectContext *context = [appDelegate managedObjectContext];
-#if 1
-    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
-    NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
-    
-    // Construct a fetch request
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture"
-                                              inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    // Add an NSSortDescriptor to sort the labels alphabetically
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
-                                                                   ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    NSError *error = nil;
-    self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
-    [self.tableView reloadData];
-#else   // Load the table contents directly from the StackMob API
- //   SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
- //   SSStackMobRESTApi *restAPI = appDelegate.stackMobRESTApi;
-
-    RKObjectManager *manager = [RKObjectManager sharedManager];
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
-    [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
-                      success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
-                          NSLog(@"done");
-                          self.furnitureArray = [result array];
-                          [self.tableView reloadData];
-                          SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-                          [appDelegate saveContext];
-                      }
-                      failure: ^( RKObjectRequestOperation *operation, NSError *error) {
-                          NSLog(@"error");
-                      }];
-
-#endif
+    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (appDelegate.stackMobRESTApi.appIsOnline) {
+        RKObjectManager *manager = [RKObjectManager sharedManager];
+        [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
+        [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
+                          success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
+                              NSLog(@"done");
+                              self.furnitureArray = [result array];
+                              [self.tableView reloadData];
+                              SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                              [appDelegate saveContext];
+                          }
+                          failure: ^( RKObjectRequestOperation *operation, NSError *error) {
+                              NSLog(@"error");
+                          }];
+        
+    } else {
+        RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+        NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
+        
+        // Construct a fetch request
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        // Add an NSSortDescriptor to sort the labels alphabetically
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                       ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        NSError *error = nil;
+        self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
+        [self.tableView reloadData];
+    }
 }
 
 
