@@ -2,7 +2,7 @@
 //  Furniture.m
 //  FurnitureCatalog
 //
-//  Created by Scott Richards on 11/14/13.
+//  Created by Scott Richards on 11/28/13.
 //  Copyright (c) 2013 Scott Richards. All rights reserved.
 //
 
@@ -19,5 +19,6 @@
 @dynamic price;
 @dynamic private;
 @dynamic width;
+@dynamic id;
 
 @end

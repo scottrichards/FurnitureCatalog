@@ -2,7 +2,7 @@
 //  Furniture.h
 //  FurnitureCatalog
 //
-//  Created by Scott Richards on 11/14/13.
+//  Created by Scott Richards on 11/28/13.
 //  Copyright (c) 2013 Scott Richards. All rights reserved.
 //
 
@@ -20,5 +20,6 @@
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSNumber * private;
 @property (nonatomic, retain) NSDecimalNumber * width;
+@property (nonatomic, retain) NSString * id;
 
 @end

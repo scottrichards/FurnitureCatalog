@@ -109,6 +109,7 @@
     
     // Following properties are a direct mapping from the StackMob Schema to our internal
     [requestMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category",@"price"]];
+    [requestMapping addAttributeMappingsFromDictionary:@{@"id": @"userfurniture_id"}];
     
     // For any object of class MDatabase, serialize into an NSMutableDictionary using the given mapping
     // If we will provide the rootKeyPath, serialization will nest under the 'provided' key path
@@ -130,6 +131,8 @@
 #endif
     // This is where you put any fields that do not map up directly
     [responseMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category",@"price"]];
+    
+    [responseMapping addAttributeMappingsFromDictionary:@{@"userfurniture_id":@"id"}];
     
     // The root JSON key path. nil in our case states that there won't be one.
     NSString *keyPath = nil;
@@ -217,18 +220,6 @@
 
 - (void)getFurnitureList
 {
- /*   RKObjectManager *manager = [RKObjectManager sharedManager];
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
-    [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
-                      success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
-                          NSLog(@"done");
-                      }
-                      failure: ^( RKObjectRequestOperation *operation, NSError *error) {
-                          NSLog(@"error");
-                      }];*/
-    
-    
-        
     RKObjectManager *manager = [RKObjectManager sharedManager];
     [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
     [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
