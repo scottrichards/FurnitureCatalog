@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Furniture;
 
 @interface SSStackMobRESTApi : NSObject
 
@@ -14,6 +15,7 @@
 - (void)setupMappings;
 - (void)setupCoreData;
 - (void)getFurnitureList;
+- (void)addFurniture:(Furniture *)newItem;
 
 @property (assign, nonatomic) BOOL appIsOnline;
 

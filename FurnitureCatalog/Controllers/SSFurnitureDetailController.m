@@ -9,6 +9,7 @@
 #import "SSFurnitureDetailController.h"
 #import "Furniture.h"
 #import "SSAppDelegate.h"
+#import "SSStackMobRESTApi.h"
 
 @interface SSFurnitureDetailController () <UITextFieldDelegate>
 
@@ -91,8 +92,6 @@
 
 - (void) create:(id)sender
 {
-//    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
     NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
     Furniture *furniture;
@@ -111,6 +110,11 @@
     NSNumber * price = [formatter numberFromString:[[self price] text]];
     NSDecimalNumber* decimalPrice = [NSDecimalNumber decimalNumberWithDecimal:[price decimalValue]];
     [furniture setPrice:decimalPrice];
+    
+    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (appDelegate.stackMobRESTApi.appIsOnline) {
+        [appDelegate.stackMobRESTApi addFurniture:furniture];
+    }
     
     // Save everything
     NSError *error = nil;
