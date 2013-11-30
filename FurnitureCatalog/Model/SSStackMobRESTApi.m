@@ -79,13 +79,16 @@
     // Reachability
     [manager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"There is no network connection"
+ /*         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"There is no network connection"
                                                             message:@"You must be connected to the internet to use this app."
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
-            self.appIsOnline = false;
             [alert show];
+  */
+            NSLog(@"App is Offline");
+            self.appIsOnline = false;
+            
             
         } else {
             self.appIsOnline = true;
@@ -108,9 +111,10 @@
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
     
     // Following properties are a direct mapping from the StackMob Schema to our internal
-//    [requestMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category",@"price"]];
     [requestMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category"]];
-//    [requestMapping addAttributeMappingsFromDictionary:@{@"id": @"userfurniture_id"}];
+    
+//    [requestMapping addAttributeMappingsFromArray:@[@"name",@"brand",@"category"]];
+    [requestMapping addAttributeMappingsFromDictionary:@{@"price": @"price"}];
     
     // For any object of class MDatabase, serialize into an NSMutableDictionary using the given mapping
     // If we will provide the rootKeyPath, serialization will nest under the 'provided' key path
@@ -126,7 +130,7 @@
     
     // How to identify if the object we got is in database
     // Here, we identify by name.
-    responseMapping.identificationAttributes = @[@"name"];
+    responseMapping.identificationAttributes = @[@"id"];
 #else
     RKObjectMapping *responseMapping = [RKObjectMapping mappingForClass:itemClass];
 #endif
@@ -208,31 +212,27 @@
 - (void)addFurniture:(Furniture *)newItem
 {
     RKObjectManager *manager = [RKObjectManager sharedManager];
-// Don't think I need this anymore
-//    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
     [manager postObject:newItem path:nil parameters:nil
                 success: ^( RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                     NSLog(@"Add Furniture SUCCESS");
-                    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-                    [appDelegate saveContext];
+                    [self.delegate onSuccess:operation result:mappingResult];
                 }
                 failure: ^( RKObjectRequestOperation *operation, NSError *error) {
                     NSLog(@"Add Furniture FAILURE");
+                    [self.delegate onFailure:operation error:error];
                 }];
 }
 
 - (void)getFurnitureList
 {
     RKObjectManager *manager = [RKObjectManager sharedManager];
-//    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
     [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
                       success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
                           NSLog(@"Retrieved Furniture List");
-                          SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-                          [appDelegate saveContext];
+                          [self.delegate onSuccess:operation result:result];
                       }
                       failure: ^( RKObjectRequestOperation *operation, NSError *error) {
-                          NSLog(@"ERROR Failed to Retrieve Furniture List");
+                          [self.delegate onFailure:operation error:error];
                       }];
 
 }

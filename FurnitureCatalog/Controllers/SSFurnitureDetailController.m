@@ -11,8 +11,9 @@
 #import "SSAppDelegate.h"
 #import "SSStackMobRESTApi.h"
 
-@interface SSFurnitureDetailController () <UITextFieldDelegate>
-
+@interface SSFurnitureDetailController () <UITextFieldDelegate, SSSTackMobRESTApiDelegate>
+- (void)onSuccess:(RKObjectRequestOperation *)operation result:(RKMappingResult *)mappingResult;
+- (void)onFailure:(RKObjectRequestOperation *)operation error:(NSError *)error;
 
 @end
 
@@ -112,19 +113,33 @@
     [furniture setPrice:decimalPrice];
     
     SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate.stackMobRESTApi setDelegate:self];
     if (appDelegate.stackMobRESTApi.appIsOnline) {
         [appDelegate.stackMobRESTApi addFurniture:furniture];
-    }
-    
-    // Save everything
-    NSError *error = nil;
-    if ([context save:&error]) {
-        NSLog(@"The save was successful!");
     } else {
-        NSLog(@"The save wasn't successful: %@", [error userInfo]);
+        // Save everything
+        NSError *error = nil;
+        if ([context save:&error]) {
+            NSLog(@"The save was successful!");
+        } else {
+            NSLog(@"The save wasn't successful: %@", [error userInfo]);
+        }
+        [[self navigationController] popViewControllerAnimated:YES];
     }
+}
+
+- (void)onSuccess:(RKObjectRequestOperation *)operation result:(RKMappingResult *)mappingResult
+{
+    NSLog(@"Add Furniture SUCCESS");
     [[self navigationController] popViewControllerAnimated:YES];
 }
+
+- (void)onFailure:(RKObjectRequestOperation *)operation error:(NSError *)error
+{
+    NSLog(@"Add Furniture ERROR");
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 - (IBAction)backgroundTapped:(id)sender {
      [[self view] endEditing:YES];
 }

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSStackMobRESTApi.h"
+
 @class SSMainViewController;
 @class Furniture;
 
-@interface SSFurnitureDetailController : UIViewController
+@interface SSFurnitureDetailController : UIViewController <SSSTackMobRESTApiDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *category;

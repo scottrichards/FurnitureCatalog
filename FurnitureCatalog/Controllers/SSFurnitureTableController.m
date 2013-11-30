@@ -14,7 +14,8 @@
 #import "SSStackMobRESTApi.h"
 
 @interface SSFurnitureTableController ()
-
+// Fetched results controller to interact with data
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation SSFurnitureTableController
@@ -34,6 +35,30 @@
         self.navigationController.navigationBar.translucent = NO;
     }
     return self;
+}
+
+- (void)constructFetchedResultsController
+{
+    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+    NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
+    
+    // Construct a fetch request
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    // Add an NSSortDescriptor to sort the labels alphabetically
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                   ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error = nil;
+    self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
+}
+
+- (void)constructStackMobFetchedResultsController
+{
+    
 }
 
 - (void)addFurniture
@@ -184,22 +209,24 @@
 - (void) loadTableData {
     SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     if (appDelegate.stackMobRESTApi.appIsOnline) {
-        RKObjectManager *manager = [RKObjectManager sharedManager];
-        [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"application/vnd.stackmob+json"];
+        SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        [appDelegate.stackMobRESTApi setDelegate:self];
+        [appDelegate.stackMobRESTApi getFurnitureList];
+ /*       RKObjectManager *manager = [RKObjectManager sharedManager];
         [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
                           success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
                               NSLog(@"done");
                               self.furnitureArray = [result array];
                               [self.tableView reloadData];
-                              SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-                              [appDelegate saveContext];
                           }
                           failure: ^( RKObjectRequestOperation *operation, NSError *error) {
                               NSLog(@"error");
                           }];
+  */
         
     } else {
-        RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+        [self constructFetchedResultsController ];
+/*        RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
         NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
         
         // Construct a fetch request
@@ -213,12 +240,23 @@
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
         NSError *error = nil;
-        self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
+        self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error]; */
         [self.tableView reloadData];
     }
 }
 
+- (void)onSuccess:(RKObjectRequestOperation *)operation result:(RKMappingResult *)mappingResult
+{
+    NSLog(@"GET Furniture SUCCESS");
+    self.furnitureArray = [mappingResult array];
+    [self.tableView reloadData];
+}
 
+- (void)onFailure:(RKObjectRequestOperation *)operation error:(NSError *)error
+{
+    NSLog(@"GET Furniture ERROR");
+    [[self navigationController] popViewControllerAnimated:YES];
+}
 
 
 
