@@ -165,7 +165,7 @@
     // Add defined routes to the Object Manager router
     [manager.router.routeSet addRoutes:@[itemsRoute, newItemRoute]];
 // USE CORE DATA
-#if 0
+#if 1
     // Deleating orphaned objects
     // Define Fetch request to trigger on specific url
     [manager addFetchRequestBlock:^NSFetchRequest *(NSURL *URL) {
@@ -178,7 +178,7 @@
         
         // Match the URL with pathMatcher and retrieve arguments
         BOOL match = [pathMatcher matchesPath:[URL relativePath] tokenizeQueryStrings:NO parsedArguments:&argsDict];
-#if 0
+#if 1
         // If url matched, create NSFetchRequest
         if (match) {
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

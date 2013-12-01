@@ -32,6 +32,11 @@
                                         target:self
                                         action:@selector(addFurniture)];
         [[self navigationItem] setRightBarButtonItem:addItem];
+        UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
+                                    initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                    target:self
+                                    action:@selector(refreshList)];
+         [[self navigationItem] setLeftBarButtonItem:refreshButton];
         self.navigationController.navigationBar.translucent = NO;
     }
     return self;
@@ -56,9 +61,50 @@
     self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
 }
 
-- (void)constructStackMobFetchedResultsController
+- (NSFetchedResultsController *)fetchedResultsController
 {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
     
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
+    NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsController;
+}
+
+- (void)refreshList
+{
+    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate.stackMobRESTApi setDelegate:self];
+    [appDelegate.stackMobRESTApi getFurnitureList];
 }
 
 - (void)addFurniture
@@ -106,13 +152,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
-
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [furnitureArray count];
+//    return [furnitureArray count];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,7 +174,8 @@
     }
     
     // Grab the artist
-    Furniture *furniture = [self.furnitureArray objectAtIndex:indexPath.row];
+//    Furniture *furniture = [self.furnitureArray objectAtIndex:indexPath.row];
+    Furniture *furniture = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = furniture.name;
     
     return cell;
@@ -212,35 +260,9 @@
         SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         [appDelegate.stackMobRESTApi setDelegate:self];
         [appDelegate.stackMobRESTApi getFurnitureList];
- /*       RKObjectManager *manager = [RKObjectManager sharedManager];
-        [manager getObjectsAtPath:@"/UserFurniture" parameters:nil
-                          success: ^( RKObjectRequestOperation *operation, RKMappingResult *result) {
-                              NSLog(@"done");
-                              self.furnitureArray = [result array];
-                              [self.tableView reloadData];
-                          }
-                          failure: ^( RKObjectRequestOperation *operation, NSError *error) {
-                              NSLog(@"error");
-                          }];
-  */
         
     } else {
-        [self constructFetchedResultsController ];
-/*        RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
-        NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
-        
-        // Construct a fetch request
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Furniture"
-                                                  inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        // Add an NSSortDescriptor to sort the labels alphabetically
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
-                                                                       ascending:YES];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [fetchRequest setSortDescriptors:sortDescriptors];
-        NSError *error = nil;
-        self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error]; */
+//        [self constructFetchedResultsController ];
         [self.tableView reloadData];
     }
 }
@@ -249,6 +271,13 @@
 {
     NSLog(@"GET Furniture SUCCESS");
     self.furnitureArray = [mappingResult array];
+    NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
     [self.tableView reloadData];
 }
 

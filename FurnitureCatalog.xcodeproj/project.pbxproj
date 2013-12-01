@@ -11,6 +11,7 @@
 		01538C89183407BD00EBB424 /* SSFurnitureDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01538C87183407BD00EBB424 /* SSFurnitureDetailController.m */; };
 		01538C8A183407BD00EBB424 /* SSFurnitureDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01538C88183407BD00EBB424 /* SSFurnitureDetailController.xib */; };
 		01538CC71834311600EBB424 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01538CC61834311600EBB424 /* MobileCoreServices.framework */; };
+		01555701184AB5C6009B4E93 /* SSStackMobRESTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01555700184AB5C6009B4E93 /* SSStackMobRESTRequest.m */; };
 		018B2A581833FDCB004DF155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A571833FDCB004DF155 /* Foundation.framework */; };
 		018B2A5A1833FDCB004DF155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A591833FDCB004DF155 /* CoreGraphics.framework */; };
 		018B2A5C1833FDCB004DF155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B2A5B1833FDCB004DF155 /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		01538C87183407BD00EBB424 /* SSFurnitureDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSFurnitureDetailController.m; path = Controllers/SSFurnitureDetailController.m; sourceTree = "<group>"; };
 		01538C88183407BD00EBB424 /* SSFurnitureDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSFurnitureDetailController.xib; path = Controllers/SSFurnitureDetailController.xib; sourceTree = "<group>"; };
 		01538CC61834311600EBB424 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		015556FF184AB5C6009B4E93 /* SSStackMobRESTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSStackMobRESTRequest.h; path = Model/SSStackMobRESTRequest.h; sourceTree = "<group>"; };
+		01555700184AB5C6009B4E93 /* SSStackMobRESTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSStackMobRESTRequest.m; path = Model/SSStackMobRESTRequest.m; sourceTree = "<group>"; };
 		018B2A541833FDCB004DF155 /* FurnitureCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurnitureCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018B2A571833FDCB004DF155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		018B2A591833FDCB004DF155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,8 @@
 				01D0796A1835389400973F12 /* Furniture.m */,
 				0114A5901843E8F500227F0F /* SSStackMobRESTApi.h */,
 				0114A5911843E8F500227F0F /* SSStackMobRESTApi.m */,
+				015556FF184AB5C6009B4E93 /* SSStackMobRESTRequest.h */,
+				01555700184AB5C6009B4E93 /* SSStackMobRESTRequest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				01D07A201835D1CC00973F12 /* SSScrollView.m in Sources */,
 				0114A5921843E8F500227F0F /* SSStackMobRESTApi.m in Sources */,
 				01D0796E183547A600973F12 /* SSFurnitureTableController.m in Sources */,
+				01555701184AB5C6009B4E93 /* SSStackMobRESTRequest.m in Sources */,
 				018B2A6D1833FDCB004DF155 /* FurnitureCatalog.xcdatamodeld in Sources */,
 				018B2A661833FDCB004DF155 /* main.m in Sources */,
 				01538C89183407BD00EBB424 /* SSFurnitureDetailController.m in Sources */,
