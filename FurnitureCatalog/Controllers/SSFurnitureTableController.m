@@ -12,6 +12,7 @@
 #import "SSFurnitureTableViewCell.h"
 #import "Furniture.h"
 #import "SSStackMobRESTApi.h"
+#import "SSStackMobRESTRequest.h"
 
 @interface SSFurnitureTableController ()
 // Fetched results controller to interact with data
@@ -20,7 +21,7 @@
 
 @implementation SSFurnitureTableController
 
-@synthesize furnitureArray;
+//@synthesize furnitureArray;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -42,7 +43,8 @@
     return self;
 }
 
-- (void)constructFetchedResultsController
+/*
+- (void)createArrayFromFetchRequest
 {
     RKManagedObjectStore *defaultStore = [RKManagedObjectStore defaultStore];
     NSManagedObjectContext *context = [defaultStore persistentStoreManagedObjectContext];
@@ -60,6 +62,7 @@
     NSError *error = nil;
     self.furnitureArray = [context executeFetchRequest:fetchRequest error:&error];
 }
+ */
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -102,9 +105,9 @@
 
 - (void)refreshList
 {
-    SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    [appDelegate.stackMobRESTApi setDelegate:self];
-    [appDelegate.stackMobRESTApi getFurnitureList];
+    SSStackMobRESTRequest *restRequest = [[SSStackMobRESTRequest alloc] init];
+    [restRequest setDelegate:self];
+    [restRequest getFurnitureList];
 }
 
 - (void)addFurniture
@@ -243,7 +246,7 @@
     }];
     
     [detailViewController setDelegate:self];
-    Furniture *selectedItem = [self.furnitureArray objectAtIndex:[indexPath row]];
+    Furniture *selectedItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Give detail view controller a pointer to the item object in row
     [detailViewController setItem:selectedItem];
@@ -257,9 +260,9 @@
 - (void) loadTableData {
     SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     if (appDelegate.stackMobRESTApi.appIsOnline) {
-        SSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        [appDelegate.stackMobRESTApi setDelegate:self];
-        [appDelegate.stackMobRESTApi getFurnitureList];
+        SSStackMobRESTRequest *restRequest = [[SSStackMobRESTRequest alloc] init];
+        [restRequest setDelegate:self];
+        [restRequest getFurnitureList];
         
     } else {
 //        [self constructFetchedResultsController ];
@@ -270,7 +273,7 @@
 - (void)onSuccess:(RKObjectRequestOperation *)operation result:(RKMappingResult *)mappingResult
 {
     NSLog(@"GET Furniture SUCCESS");
-    self.furnitureArray = [mappingResult array];
+ //   self.furnitureArray = [mappingResult array];
     NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.

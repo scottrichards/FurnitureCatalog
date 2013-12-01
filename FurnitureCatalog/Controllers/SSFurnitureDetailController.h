@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SSStackMobRESTApi.h"
+#import "SSStackMobRESTrequest.h"
 
 @class SSMainViewController;
 @class Furniture;

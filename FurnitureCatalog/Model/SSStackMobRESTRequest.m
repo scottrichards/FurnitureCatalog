@@ -39,5 +39,21 @@
     
 }
 
+- (void)updateFurniture:(Furniture *)item
+{
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    [manager postObject:item path:nil parameters:nil
+                success: ^( RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                    NSLog(@"Add Furniture SUCCESS");
+                    [self.delegate onSuccess:operation result:mappingResult];
+                }
+                failure: ^( RKObjectRequestOperation *operation, NSError *error) {
+                    NSLog(@"Add Furniture FAILURE");
+                    [self.delegate onFailure:operation error:error];
+                }];
+}
+
+
+
 
 @end

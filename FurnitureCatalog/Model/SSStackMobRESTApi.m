@@ -165,7 +165,7 @@
     // Add defined routes to the Object Manager router
     [manager.router.routeSet addRoutes:@[itemsRoute, newItemRoute]];
 // USE CORE DATA
-#if 1
+#if 0
     // Deleating orphaned objects
     // Define Fetch request to trigger on specific url
     [manager addFetchRequestBlock:^NSFetchRequest *(NSURL *URL) {
@@ -208,7 +208,7 @@
 #endif
 }
 
-
+/*
 - (void)addFurniture:(Furniture *)newItem
 {
     RKObjectManager *manager = [RKObjectManager sharedManager];
@@ -236,5 +236,5 @@
                       }];
 
 }
-
+*/
 @end
